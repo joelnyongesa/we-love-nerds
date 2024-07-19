@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <app-details id="details"/>
+</div>
+
+<div class="wrapper wrapper-xl">
+    @defer (on viewport) {
+        <app-projects />
+    } @placeholder {
+        <p style="text-align: center;">Projects Will Be Displayed Here</p>
+    } @loading (after 3s; minimum 5s) {
+        <app-projects-skeleton />
+    } @error {
+        <p>Oops, something went wrong!</p>
+    }
+</div>
